@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <title>Account CRUD</title>
+</head>
+
+<body class="bg-gray-100 p-6">
+  <div class="container mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Account Management</h1>
+    <form id="account-form" class="mb-4">
+      <input type="hidden" id="account-id" />
+      <input type="email" id="email" placeholder="Email" class="border p-2 w-full mb-2" required>
+      <input type="text" id="nama" placeholder="Nama" class="border p-2 w-full mb-2" required>
+      <input type="text" id="nim" placeholder="NIM" class="border p-2 w-full mb-2" required>
+
+      <div class="relative">
+        <input type="password" id="password" placeholder="Password" class="border p-2 w-full mb-2" required>
+        <!-- Icon mata untuk show/hide password -->
+        <span id="toggle-password" class="absolute right-3 top-2 cursor-pointer">
+          <!-- Icon Mata Terbuka -->
+          <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M12 4.5C7.305 4.5 3.133 7.413 1.5 12c1.633 4.587 5.805 7.5 10.5 7.5s8.867-2.913 10.5-7.5C20.867 7.413 16.695 4.5 12 4.5z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <!-- Icon Mata Tertutup -->
+          <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 hidden"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M3 3l18 18m-8.6-4.4a4.4 4.4 0 1 1-6.2-6.2M17.656 17.656a10 10 0 0 1-10.312-10.31m0 0a4.4 4.4 0 0 1 6.2 6.2" />
+          </svg>
+        </span>
+      </div>
+
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded">Save</button>
+    </form>
+
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b">ID</th>
+          <th class="py-2 px-4 border-b">Email</th>
+          <th class="py-2 px-4 border-b">Nama</th>
+          <th class="py-2 px-4 border-b">NIM</th>
+          <th class="py-2 px-4 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="account-list"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
